@@ -10,7 +10,7 @@
         override fun nextScheduledActivity(thisStateRef: StateRef, flowLogicRefFactory: FlowLogicRefFactory): ScheduledActivity?      
         {
 
-            return ScheduledActivity(flowLogicRefFactory.create(HeartbeatFlow::class.java, thisStateRef), nextActivityTime)
+            return ScheduledActivity(<USE flowLogicRefFactory to call flow with flow Parameters>, <JAVA INSTANT>)
 
         }
 
