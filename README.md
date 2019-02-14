@@ -2,8 +2,8 @@
 
 ## Two Steps to follow:
   1. State needs to implement ```SchedulableState```<br/>
-    Override method ```nextScheduledActivity``` which returns ```ScheduledActivity```<br/>
-    ```nextScheduledActivity``` has default paremeters of current state refrence and [flowLogicRefFactory](https://docs.corda.net/api/kotlin/corda/net.corda.core.flows/-flow-logic-ref-factory/index.html) (which can be used to call flows)<br />
+    Override method ```nextScheduledActivity``` which returns ```ScheduledActivity```.<br/>
+    ```nextScheduledActivity``` has default paremeters of current state refrence and [flowLogicRefFactory](https://docs.corda.net/api/kotlin/corda/net.corda.core.flows/-flow-logic-ref-factory/index.html) (which can be used to call flows).<br />
     [Example here](https://github.com/vardan10/Corda-schedulable-state/blob/master/src/main/kotlin/com/heartbeat/state/HeartState.kt#L17)
     
     class HeartState() : SchedulableState {
@@ -18,7 +18,7 @@
     }
     
     
-  2. Implement a ```FlowLogic``` to be executed by each node<br/>
+  2. Implement a ```FlowLogic``` to be executed by each node.<br/>
     The FlowLogic must be annotated with ```@SchedulableFlow```.
     
     @InitiatingFlow
