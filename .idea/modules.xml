@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Corda-schedulable-state.iml" filepath="$PROJECT_DIR$/.idea/Corda-schedulable-state.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.heartbeat.heartbeat.iml" filepath="$PROJECT_DIR$/.idea/modules/com.heartbeat.heartbeat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.heartbeat.heartbeat.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.heartbeat.heartbeat.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.heartbeat.heartbeat.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.heartbeat.heartbeat.test.iml" />
     </modules>
   </component>
 </project>
