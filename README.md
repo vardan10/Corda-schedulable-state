@@ -1,11 +1,33 @@
 # [Event scheduling](https://docs.corda.net/event-scheduling.html)
 
 ## Two Steps to follow:
-  1. State needs to implement ```SchedulableState``` [check this](https://github.com/vardan10/Corda-schedulable-state/blob/master/heartbeat/src/main/kotlin/com/heartbeat/state/HeartState.kt#L20)<br/>
-    Override method ```nextScheduledActivity``` which returns ```ScheduledActivity``` [check this](https://github.com/vardan10/Corda-schedulable-state/blob/master/heartbeat/src/main/kotlin/com/heartbeat/state/HeartState.kt#L25)<br/>
+  1. State needs to implement ```SchedulableState```<br/>
+    Override method ```nextScheduledActivity``` which returns ```ScheduledActivity```<br/>
+    
+    ```
+    class HeartState() : SchedulableState {
+
+        override fun nextScheduledActivity(thisStateRef: StateRef, flowLogicRefFactory: FlowLogicRefFactory): ScheduledActivity?      
+        {
+
+            return ScheduledActivity(flowLogicRefFactory.create(HeartbeatFlow::class.java, thisStateRef), nextActivityTime)
+
+        }
+
+    }
+    ```
+    
     
   2. Implement a ```FlowLogic``` to be executed by each node<br/>
-    The FlowLogic must be annotated with ```@SchedulableFlow```. [check this](https://github.com/vardan10/Corda-schedulable-state/blob/master/heartbeat/src/main/kotlin/com/heartbeat/flow/HeartbeatFlow.kt#L23)
+    The FlowLogic must be annotated with ```@SchedulableFlow```.
+    
+    ```
+    @InitiatingFlow
+    @SchedulableFlow
+    class HeartbeatFlow(private val stateRef: StateRef) : FlowLogic<String>() {
+        ...
+    }
+    ```
 
 ## Note
 1. Activities associated with any **consumed states are unscheduled**.
