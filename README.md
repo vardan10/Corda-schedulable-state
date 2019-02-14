@@ -10,7 +10,7 @@
         override fun nextScheduledActivity(thisStateRef: StateRef, flowLogicRefFactory: FlowLogicRefFactory): ScheduledActivity?      
         {
 
-            return ScheduledActivity(<USE flowLogicRefFactory to call flow with flow Parameters>, <JAVA INSTANT>)
+            return ScheduledActivity(<USE_flowLogicRefFactory_TO_CALL_FLOW_WITH_FLOW_PARAMETERS>, <JAVA_INSTANT>)
 
         }
 
