@@ -41,15 +41,8 @@ class HeartbeatFlow(private val stateRef: StateRef) : FlowLogic<String>() {
     @Suspendable
     override fun call(): String {
         progressTracker.currentStep = GENERATING_TRANSACTION
-
-        // Check if event is occured
-        val eventOccured = false
-        if (eventOccured){
-
-        }
-
         val input = serviceHub.toStateAndRef<HeartState>(stateRef)
-        val output = HeartState(ourIdentity)
+        val output = HeartState(ourIdentity, java.time.Instant.now().plusSeconds(5))
         val beatCmd = Command(Beat(), ourIdentity.owningKey)
         val txBuilder = TransactionBuilder(serviceHub.networkMapCache.notaryIdentities.first())
                 .addInputState(input)

@@ -25,7 +25,7 @@ class FlowTests {
 
     @Test
     fun `heartbeat occurs every second`() {
-        val flow = StartHeartbeatFlow()
+        val flow = StartHeartbeatFlow("5")
         node.startFlow(flow).get()
 
         val enoughTimeForFiveScheduledTxs: Long = 5500

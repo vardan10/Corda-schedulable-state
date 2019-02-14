@@ -8,6 +8,7 @@ import net.corda.core.flows.InitiatingFlow
 import net.corda.core.flows.StartableByRPC
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
+import java.time.Instant
 
 /**
  * Creates a Heartbeat state on the ledger.
@@ -20,7 +21,7 @@ import net.corda.core.utilities.ProgressTracker
  */
 @InitiatingFlow
 @StartableByRPC
-class StartHeartbeatFlow : FlowLogic<Unit>() {
+class StartHeartbeatFlow(val nextActivityTime: String) : FlowLogic<Unit>() {
     companion object {
         object GENERATING_TRANSACTION : ProgressTracker.Step("Generating a HeartState transaction.")
         object SIGNING_TRANSACTION : ProgressTracker.Step("Signing transaction with our private key.")
@@ -40,7 +41,19 @@ class StartHeartbeatFlow : FlowLogic<Unit>() {
     @Suspendable
     override fun call() {
         progressTracker.currentStep = GENERATING_TRANSACTION
-        val output = HeartState(ourIdentity)
+
+
+        var time = Instant.now()
+        if (nextActivityTime == "null"){
+            time = null
+        } else {
+            try{
+                time = Instant.parse(nextActivityTime)
+            } catch (e: Exception) {
+                time = Instant.now().plusSeconds(nextActivityTime.toLong())
+            }
+        }
+        val output = HeartState(ourIdentity, time)
         val cmd = Command(HeartContract.Commands.Beat(), ourIdentity.owningKey)
         val txBuilder = TransactionBuilder(serviceHub.networkMapCache.notaryIdentities.first())
                 .addOutputState(output, HeartContract.contractID)
