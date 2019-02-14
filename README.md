@@ -4,6 +4,7 @@
   1. State needs to implement ```SchedulableState```<br/>
     Override method ```nextScheduledActivity``` which returns ```ScheduledActivity```<br/>
     ```nextScheduledActivity``` has default paremeters of current state refrence and [flowLogicRefFactory](https://docs.corda.net/api/kotlin/corda/net.corda.core.flows/-flow-logic-ref-factory/index.html) (which can be used to call flows)
+    [Exmpale here](https://github.com/vardan10/Corda-schedulable-state/blob/master/src/main/kotlin/com/heartbeat/state/HeartState.kt#L17)
     
     class HeartState() : SchedulableState {
 
