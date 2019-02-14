@@ -2,7 +2,7 @@
   <img src="https://www.corda.net/wp-content/uploads/2016/11/fg005_corda_b.png" alt="Corda" width="500">
 </p>
 
-Original PRoject [here](https://github.com/corda/samples/tree/release-V3/heartbeat)
+Original Project [here](https://github.com/corda/samples/tree/release-V3/heartbeat)
 
 # Heartbeat CorDapp
 
