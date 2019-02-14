@@ -4,7 +4,6 @@
   1. State needs to implement ```SchedulableState```<br/>
     Override method ```nextScheduledActivity``` which returns ```ScheduledActivity```<br/>
     
-    ```
     class HeartState() : SchedulableState {
 
         override fun nextScheduledActivity(thisStateRef: StateRef, flowLogicRefFactory: FlowLogicRefFactory): ScheduledActivity?      
@@ -15,7 +14,6 @@
         }
 
     }
-    ```
     
     
   2. Implement a ```FlowLogic``` to be executed by each node<br/>
