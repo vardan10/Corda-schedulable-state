@@ -31,9 +31,7 @@
 2. Any newly produced states are then queried via the nextScheduledActivity method and **if they do not return null then that activity is scheduled** based on the content of the ScheduledActivity object returned.
 
 
-<br/>
 <hr/>
-<br/>
 
 
 # Heartbeat CorDapp
