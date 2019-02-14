@@ -2,6 +2,8 @@
   <img src="https://www.corda.net/wp-content/uploads/2016/11/fg005_corda_b.png" alt="Corda" width="500">
 </p>
 
+Original PRoject [here](https://github.com/corda/samples/tree/release-V3/heartbeat)
+
 # Heartbeat CorDapp
 
 This CorDapp is a simple showcase of scheduled activities (i.e. activities started by a node at a specific time without 
@@ -30,7 +32,17 @@ the CRaSH shell. See https://docs.corda.net/tutorial-cordapp.html#running-the-ex
 
 Go to the CRaSH shell for PartyA, and run the `StartHeatbeatFlow`:
 
-    flow start StartHeartbeatFlow
+    flow start StartHeartbeatFlow <PARAMETER>
+    
+    PARAMETER: 3 options
+        1. Provide Zulu time - Flow will be Scheduled only once @Zulu time
+          start StartHeartbeatFlow nextActivityTime: "2019-02-14T04:50:25.510045Z"
+        
+        2. Provide x Seconds - Flow will run contineously for x seconds
+          start StartHeartbeatFlow nextActivityTime: "5"
+        
+        3. Provide "null" - Flow will not be scheduled
+          start StartHeartbeatFlow nextActivityTime: "null"
 
 If you now start monitoring the node's flow activity...
 
