@@ -4,6 +4,8 @@
   1. State needs to implement ```SchedulableState```<br/>
     Override method ```nextScheduledActivity``` which returns ```ScheduledActivity```<br/>
     
+    ```nextScheduledActivity``` has default paremeters of current state refrence and flowLogicRefFactory (which can be used to call flows)
+    
     class HeartState() : SchedulableState {
 
         override fun nextScheduledActivity(thisStateRef: StateRef, flowLogicRefFactory: FlowLogicRefFactory): ScheduledActivity?      
