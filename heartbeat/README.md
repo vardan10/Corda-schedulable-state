@@ -34,11 +34,11 @@ Go to the CRaSH shell for PartyA, and run the `StartHeatbeatFlow`:
 
     flow start StartHeartbeatFlow <PARAMETER>
     
-    PARAMETER: 3 options
+    <PARAMETER>: Can pass any one of below three options
         1. Provide Zulu time - Flow will be Scheduled only once @Zulu time
           start StartHeartbeatFlow nextActivityTime: "2019-02-14T04:50:25.510045Z"
         
-        2. Provide x Seconds - Flow will run contineously for x seconds
+        2. Provide x Seconds - Flow will run contineously for every x seconds
           start StartHeartbeatFlow nextActivityTime: "5"
         
         3. Provide "null" - Flow will not be scheduled
