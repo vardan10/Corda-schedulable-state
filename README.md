@@ -1,4 +1,4 @@
-# Event scheduling
+# [Event scheduling](https://docs.corda.net/event-scheduling.html)
 
 ## Two Steps to follow:
   1. State needs to implement ```SchedulableState```<br/>
