@@ -38,7 +38,7 @@
 
 # Heartbeat CorDapp
 
-This project is forked from [Corda Heartbeat Sample Project](https://github.com/corda/samples/tree/release-V3/heartbeat)
+This project is updated version of [Corda Heartbeat Sample Project](https://github.com/corda/samples/tree/release-V3/heartbeat)
 
 This CorDapp is a simple showcase of scheduled activities (i.e. activities started by a node at a specific time without 
 direct input from the node owner).
