@@ -1,4 +1,4 @@
-# [Event scheduling](https://docs.corda.net/event-scheduling.html)
+# Event scheduling
 
 ## Two Steps to follow:
   1. State needs to implement ```SchedulableState```<br/>
@@ -31,13 +31,14 @@
 1. Activities associated with any **consumed states are unscheduled**.
 2. Any newly produced states are then queried via the nextScheduledActivity method and **if they do not return null then that activity is scheduled** based on the content of the ScheduledActivity object returned.
 
+[Link to Corda docs](https://docs.corda.net/event-scheduling.html)
 
 <hr/>
 
 
 # Heartbeat CorDapp
 
-Original Project [here](https://github.com/corda/samples/tree/release-V3/heartbeat)
+This project is forked from [Corda Heartbeat Sample Project](https://github.com/corda/samples/tree/release-V3/heartbeat)
 
 This CorDapp is a simple showcase of scheduled activities (i.e. activities started by a node at a specific time without 
 direct input from the node owner).
